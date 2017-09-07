@@ -23,7 +23,7 @@ class Welcome extends React.Component {
     constructor(props) {
         super(props);
         this.state = {data: new Date()}
-    }
+    }//渲染的html中的变量在constructor中定义好
 
     render() {
         return (
