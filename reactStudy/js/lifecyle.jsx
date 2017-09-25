@@ -7,7 +7,7 @@ class Clock extends React.Component {
         //3.super.xx这种时候super则是指父类原型即React.Component.prototype
         super(props);
         this.state = {
-            date: new Date(),
+            date: new Date(),//被嵌入dom中，但由于被componentDidMount函数所创建的定时器，所以他的值会随时改变。
             posts:[],
             comments:[]
         };

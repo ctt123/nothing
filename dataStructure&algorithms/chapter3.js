@@ -102,7 +102,7 @@ function List(){
 
     //把当前位置移前一位
     function next(){
-        if(this.pos<this.listSize-1) {
+        if(this.pos<this.listSize) {
             ++this.pos;
         }
     }
@@ -129,70 +129,70 @@ names.append("Rhett");
 console.log(names.toString())
 console.log(names.length())
 //3.使用迭代器访问列表,优点：1.访问列元素时不必关心底层的数据存储结构 2.当为列表添加一个元素时，索引的值就不对了，此时只用更新列表，而不用更新迭代器 3.可以用不同类型的数据存储方式实现cList类，迭代器为访问列表里的元素提供了一种统一的方式。
-// for(names.front();names.currPos()!=names.length();names.next()) {
+// for(names.front();names.currPos()<names.length();names.next()) {
 //     console.log(names.getElement());
 // }
 // for(names.end();names.currPos()!=0;names.prev()) {
 //     console.log(names.getElement());
 // }
 
-
-//从文件中读取数据，然后将其保存在一个数组中
-function createArr(file) {
-    var arr = read(file).split("\n");
-    for(var i=0;i<arr.length;++i) {
-        arr[i]=arr[i].trim();
-        console.log(arr[i])
-    }
-    return arr;
-}
-
-//显示影碟店里现有的影碟清单
-function displayList(list) {
-    for(list.front();list.currPos()<list.length();list.next()) {
-        console.log(list.getElement);
-        if(list.getElement() instanceof Customer) {
-            console.log(list.getElement()['name'] + ',' + list.getElement()['movie']);
-        }else{
-            console.log(list.getElement());
-        }
-    }
-}
-
-
-//customers的构造函数
-function Customer(name,movie) {
-    this.name=name;
-    this.movie=movie;
-}
-
-//判断电影是否存在租赁电影清单中，如果是则
-function checkOut(name, movie, filmList, customerList){
-    if(movieList.contains(movie)) {
-        var c = new Customer(name, movie);
-        customerList.append(c);
-        filmList.remove(movie);
-    }else{
-        console.log(movie + ' is not available');
-    }
-}
-//4.一个基于列表的应用
-var movies = createArr('films.txt');
-
-//将数组movies中的元素保存在一个列表中
-var movieList=new List();
-
-//电影的客户
-var customers=new List();
-
-for(var i=0;i<movies.length;++i) {
-    movieList.append(movies[i]);
-}
-
-console.log('Available movies: \n');
-displayList(movieList);
-// putstr("\nEnter your name: ");
-// var name=readline();
-checkOut('Jane Doe', 'The Godfather', movieList, customers);
-console.log('\nCustomer Rentals: \n');
-displayList(customers);
+//
+// //从文件中读取数据，然后将其保存在一个数组中
+// function createArr(file) {
+//     var arr = read(file).split("\n");
+//     for(var i=0;i<arr.length;++i) {
+//         arr[i]=arr[i].trim();
+//         console.log(arr[i])
+//     }
+//     return arr;
+// }
+//
+// //显示影碟店里现有的影碟清单
+// function displayList(list) {
+//     for(list.front();list.currPos()<list.length();list.next()) {
+//         console.log(list.getElement);
+//         if(list.getElement() instanceof Customer) {
+//             console.log(list.getElement()['name'] + ',' + list.getElement()['movie']);
+//         }else{
+//             console.log(list.getElement());
+//         }
+//     }
+// }
+//
+//
+// //customers的构造函数
+// function Customer(name,movie) {
+//     this.name=name;
+//     this.movie=movie;
+// }
+//
+// //判断电影是否存在租赁电影清单中，如果是则
+// function checkOut(name, movie, filmList, customerList){
+//     if(movieList.contains(movie)) {
+//         var c = new Customer(name, movie);
+//         customerList.append(c);
+//         filmList.remove(movie);
+//     }else{
+//         console.log(movie + ' is not available');
+//     }
+// }
+// //4.一个基于列表的应用
+// var movies = createArr('films.txt');
+//
+// //将数组movies中的元素保存在一个列表中
+// var movieList=new List();
+//
+// //电影的客户
+// var customers=new List();
+//
+// for(var i=0;i<movies.length;++i) {
+//     movieList.append(movies[i]);
+// }
+//
+// console.log('Available movies: \n');
+// displayList(movieList);
+// // putstr("\nEnter your name: ");
+// // var name=readline();
+// checkOut('Jane Doe', 'The Godfather', movieList, customers);
+// console.log('\nCustomer Rentals: \n');
+// displayList(customers);
